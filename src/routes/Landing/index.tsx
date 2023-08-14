@@ -1,5 +1,7 @@
+import Loading from "./components/Loading"
+
 const Landing = () => {
-  return <div>This is the landing page!</div>
+  return <Loading/>
 }
 
 export default Landing
