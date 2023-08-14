@@ -1,0 +1,1 @@
+import{j as t}from"./index-fb8cda64.js";const o=()=>{const e="../../../../public/building.mp4";return t.jsx("video",{playsInline:!0,autoPlay:!0,muted:!0,loop:!0,poster:"polina.jpg",id:"bgvid",children:t.jsx("source",{src:e,type:"video/mp4"})})},r=()=>t.jsx(o,{});export{r as default};
