@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
   const port = parseInt(env.VITE_PORT) || 3000
 
   return {
+    base: '/atelier/',
     server: {
       port,
     },
