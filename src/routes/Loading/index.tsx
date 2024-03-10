@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 const Loading: FC = () => {
-  const video = '../../../../public/building.mp4'
+  const video = '../../../public/building.mp4'
 
   return (
     <video

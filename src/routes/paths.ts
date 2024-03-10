@@ -3,5 +3,6 @@ interface Paths {
 }
 
 export default {
-  LANDING: '*',
+  LOADING: '*',
+  HOME: 'home',
 } as Paths

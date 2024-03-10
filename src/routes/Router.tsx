@@ -3,8 +3,9 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import paths from './paths'
 
-const Landing = lazy(() => import('./Landing'))
-const Default = Landing
+const Loading = lazy(() => import('./Loading'))
+const Home = lazy(() => import('./Home'))
+const Default = Loading
 
 interface Routes {
   path: string
@@ -18,7 +19,8 @@ const getRouteElement = (Component: React.ElementType): React.ReactNode => (
 )
 
 const routes: Routes[] = [
-  { path: paths.LANDING, element: getRouteElement(Default) },
+  { path: paths.LOADING, element: getRouteElement(Default) },
+  { path: paths.HOME, element: getRouteElement(Home) },
 ]
 
 export default createBrowserRouter(routes)
