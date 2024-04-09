@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 
 import paths from './paths'
 
@@ -21,4 +21,4 @@ const routes: Routes[] = [
   { path: paths.LANDING, element: getRouteElement(Default) },
 ]
 
-export default createBrowserRouter(routes)
+export default createHashRouter(routes)
