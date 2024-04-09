@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 
 import pages from './pages'
 
@@ -21,4 +21,4 @@ const routes: Routes[] = Object.values(pages).map(({ path, component }) => {
   }
 })
 
-export default createBrowserRouter(routes)
+export default createHashRouter(routes)
