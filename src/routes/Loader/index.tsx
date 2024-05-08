@@ -1,5 +1,5 @@
 const Loader = () => {
-  const video = '../../../public/building.mp4'
+  const video = '/building.mp4'
 
   return (
     <video

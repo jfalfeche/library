@@ -9,12 +9,12 @@ interface PathComponent {
 const PATH_COMPONENTS: PathComponent[] = [
   {
     path: '*',
-    filePath: './Loader',
+    filePath: 'Loader',
     component: 'Default',
   },
   {
     path: 'home',
-    filePath: './Home',
+    filePath: 'Home',
     component: 'Home',
   },
 ]
@@ -25,7 +25,7 @@ export default PATH_COMPONENTS.reduce(
     pathComponent: PathComponent,
   ) => {
     const { component, path, filePath } = pathComponent
-    acc[component] = { path, component: lazy(() => import(filePath)) }
+    acc[component] = { path, component: lazy(() => import(`./${filePath}/index.tsx`)) }
 
     return acc
   },
