@@ -1,10 +1,7 @@
-import { lazy, Suspense } from 'react'
-import { createHashRouter } from 'react-router-dom'
+import { Suspense } from 'react'
+import { createBrowserRouter } from 'react-router-dom'
 
-import paths from './paths'
-
-const Landing = lazy(() => import('./Landing'))
-const Default = Landing
+import pages from './pages'
 
 interface Routes {
   path: string
@@ -12,13 +9,16 @@ interface Routes {
 }
 
 const getRouteElement = (Component: React.ElementType): React.ReactNode => (
-  <Suspense fallback={<Default></Default>}>
+  <Suspense fallback={<pages.Default.component></pages.Default.component>}>
     <Component />
   </Suspense>
 )
 
-const routes: Routes[] = [
-  { path: paths.LANDING, element: getRouteElement(Default) },
-]
+const routes: Routes[] = Object.values(pages).map(({ path, component }) => {
+  return {
+    path,
+    element: getRouteElement(component),
+  }
+})
 
-export default createHashRouter(routes)
+export default createBrowserRouter(routes)
