@@ -2,7 +2,7 @@
   "homepage": "http://jfalfeche.github.io/library",
   "name": "library",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
