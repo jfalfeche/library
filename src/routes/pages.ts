@@ -17,6 +17,11 @@ const PATH_COMPONENTS: PathComponent[] = [
     filePath: 'Home',
     component: 'Home',
   },
+  {
+    path: 'ewebinar',
+    filePath: 'eWebinar',
+    component: 'EWebinar',
+  },
 ]
 
 export default PATH_COMPONENTS.reduce(
@@ -25,7 +30,10 @@ export default PATH_COMPONENTS.reduce(
     pathComponent: PathComponent,
   ) => {
     const { component, path, filePath } = pathComponent
-    acc[component] = { path, component: lazy(() => import(`./${filePath}/index.tsx`)) }
+    acc[component] = {
+      path,
+      component: lazy(() => import(`./${filePath}/index.tsx`)),
+    }
 
     return acc
   },
