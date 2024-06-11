@@ -9,7 +9,7 @@ interface PathComponent {
 const PATH_COMPONENTS: PathComponent[] = [
   {
     path: '*',
-    filePath: 'Loader',
+    filePath: 'Home',
     component: 'Default',
   },
   {
