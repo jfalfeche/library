@@ -1,5 +1,6 @@
-import { SECTION_KEYS } from '@app/routes/Home/constants'
 import { FC } from 'react'
+import cn from 'classnames'
+
 import Item from './Item'
 
 interface Props {
@@ -11,24 +12,30 @@ interface Props {
 const NavBar: FC<Props> = ({ onClick, items, activeItem }) => {
   const isMini = !!activeItem
 
-  const renderMiniNav = () => {
-    return <></>
+  const clickItem = (itemKey: string) => {
+    onClick(itemKey)
   }
 
   const renderNav = () => {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="grid grid-cols-2 gap-4">
-          {SECTION_KEYS.map(key => (
-            <Item key={key} isMini={isMini} />
+      <div
+        className={cn(
+          { 'fixed left-24 bottom-24': isMini },
+          { 'flex items-center justify-center h-screen': !isMini },
+        )}
+      >
+        <div
+          className={cn(
+            { 'flex gap-4': isMini },
+            { 'grid grid-cols-2 gap-8': !isMini },
+          )}
+        >
+          {Object.keys(items).map(key => (
+            <Item key={key} isMini={isMini} onClick={() => clickItem(key)} />
           ))}
         </div>
       </div>
     )
-  }
-
-  if (activeItem) {
-    return renderMiniNav()
   }
 
   return renderNav()
