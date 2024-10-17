@@ -38,3 +38,12 @@ jobs:
           body: 'Automatically generated release for version v${{ steps.new_version.outputs.VERSION }}.'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge main -> dev
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: main
+          target_branch: dev
+          message: Sync main to dev
+          github_token: ${{ secrets.GITHUB_TOKEN }}
