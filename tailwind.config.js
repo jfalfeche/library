@@ -5,7 +5,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ['"PT Sans", sans-serif'],
-      afacad: ['"Afacad Flux, sans-serif"'],
+      afacad: ['"Afacad Flux", sans-serif'],
     },
     extend: {
       colors: {
