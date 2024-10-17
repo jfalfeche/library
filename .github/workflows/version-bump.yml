@@ -35,7 +35,7 @@ jobs:
         with:
           tag_name: 'v${{ steps.new_version.outputs.VERSION }}'
           name: 'Release v${{ steps.new_version.outputs.VERSION }}'
-          body: 'Automatically generated release for version v${{ steps.new_version.outputs.VERSION }}.'
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
