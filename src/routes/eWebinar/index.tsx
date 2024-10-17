@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 
 import Button from '@app/App/common/Button'
-import Home from '../Home'
+import Loader from '../Loader'
+import PlanetScene from '@app/components/PlanetScene'
 
 import {
   DEFAULT_WIDGET,
@@ -17,6 +18,14 @@ const createMarkup = (type: string) => {
 
 const EWebinar = () => {
   const [activeWidget, setActiveWidget] = useState(DEFAULT_WIDGET)
+
+  const renderBackground = () => (
+    <section className="fixed -z-50 top-0 left-0 w-full h-screen">
+      <Suspense fallback={<Loader />}>
+        <PlanetScene />
+      </Suspense>
+    </section>
+  )
 
   const renderWidgetSelection = () => {
     return (
@@ -61,9 +70,7 @@ const EWebinar = () => {
         <div className="col-span-1 w-full">{renderWidgetSelection()}</div>
         <div className="col-span-2 w-full">{renderWidget(activeWidget)}</div>
       </div>
-      <div className="fixed top-0 left-0 w-full h-full overflow-x-hidden overflow-y-hidden">
-        <Home />
-      </div>
+      {renderBackground()}
     </>
   )
 }
