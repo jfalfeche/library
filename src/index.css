@@ -1,3 +1,13 @@
+/*
+ * Override default font-family above
+ * with CSS properties for the .font-serif utility.
+ */
+
 @tailwind base;
+@layer base {
+  html {
+    @apply font-afacad;
+  }
+}
 @tailwind components;
 @tailwind utilities;

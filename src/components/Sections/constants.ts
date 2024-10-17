@@ -1,26 +1,34 @@
 import * as Components from '@app/components/Sections/sections'
 
-import { ComponentObject, StringObject } from '@app/types'
+import { SectionList, } from '@app/types'
 
-export const SECTIONS: StringObject = {
-  about: 'about',
-  experience: 'experience',
-  projects: 'projects',
-  contact: 'contact',
+export const SECTIONS: SectionList = {
+  about: {
+    name: 'about',
+    component: Components.About,
+    iconPath: '../../../public/about.png',
+  },
+  experience: {
+    name: 'experience',
+    component: Components.Experience,
+    iconPath: 'https://i.imgur.com/enfyvZD.png',
+  },
+  projects: {
+    name: 'projects',
+    component: Components.Projects,
+    iconPath: 'https://i.imgur.com/ZsOCJoJ.png',
+  },
+  contact: {
+    name: 'contact',
+    component: Components.Contact,
+    iconPath: 'https://i.imgur.com/h9egYfc.png',
+  }
 }
 
-export const SECTION_COMPONENTS: ComponentObject = {
-  default: Components.About,
-  about: Components.About,
-  experience: Components.Experience,
-  projects: Components.Projects,
-  contact: Components.Contact,
-}
-
-export const SECTION_BACKGROUNDS: StringObject = {
-  default: '/public/about.jpg',
-  about: '/public/about.jpg',
-  experience: '/public/experience.jpg',
-  projects: '/public/projects.jpg',
-  contact: '/public/contact.jpg',
-}
+/*
+  Public Paths for the Icons
+  about: 'https://i.imgur.com/MAdwgyO.png'
+  experience: 'https://i.imgur.com/enfyvZD.png'
+  projects: 'https://i.imgur.com/ZsOCJoJ.png'
+  contact: 'https://i.imgur.com/h9egYfc.png'
+*/

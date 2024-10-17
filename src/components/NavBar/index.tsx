@@ -1,19 +1,20 @@
 import { FC } from 'react'
+import { SectionList, SectionObject } from '@app/types'
 import cn from 'classnames'
 
 import Item from './Item'
 
 interface Props {
   onClick: Function
-  items: { [key: string]: string }
-  activeItem?: string
+  items: SectionList
+  activeItem?: SectionObject
 }
 
 const NavBar: FC<Props> = ({ onClick, items, activeItem }) => {
   const isMini = !!activeItem
 
-  const clickItem = (itemKey: string) => {
-    onClick(itemKey)
+  const clickItem = (item: SectionObject) => {
+    onClick(item)
   }
 
   const renderNav = () => {
@@ -27,11 +28,16 @@ const NavBar: FC<Props> = ({ onClick, items, activeItem }) => {
         <div
           className={cn(
             { 'flex gap-4': isMini },
-            { 'grid grid-cols-2 gap-8': !isMini },
+            { 'grid grid-cols-4 gap-12': !isMini },
           )}
         >
           {Object.keys(items).map(key => (
-            <Item key={key} isMini={isMini} onClick={() => clickItem(key)} />
+            <Item
+              key={key}
+              iconPath={items[key].iconPath}
+              isMini={isMini}
+              onClick={() => clickItem(items[key])}
+            />
           ))}
         </div>
       </div>
