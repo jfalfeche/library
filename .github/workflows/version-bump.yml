@@ -3,7 +3,7 @@ name: Bump Version and Create Release Automatically
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   bump_version:
