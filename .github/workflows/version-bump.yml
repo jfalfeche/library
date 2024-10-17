@@ -39,7 +39,13 @@ jobs:
             npm version patch -m "ci: bumped patch version to %s"
           fi
 
-          # Push changes back to the repository
+          # Stage any changes (e.g., version bump in package.json)
+          git add .
+
+          # Commit the version bump
+          git commit -m "ci: version bump"
+
+          # Push the changes and tags
           git push --follow-tags
 
       - name: Get new version
