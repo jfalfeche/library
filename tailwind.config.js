@@ -4,7 +4,8 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['"PT Sans", sans-serif']
+      sans: ['"PT Sans", sans-serif'],
+      afacad: ['"Afacad Flux", sans-serif'],
     },
     extend: {
       colors: {
