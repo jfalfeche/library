@@ -1,16 +1,19 @@
-import { Suspense, useState } from 'react'
+import {
+  Suspense,
+  // useState
+} from 'react'
 
 import Loader from '../Loader'
 import PlanetScene from '@app/components/PlanetScene'
 // import NavBar from '@app/components/NavBar'
-import Section from '@app/components/Sections'
+// import Section from '@app/components/Sections'
 
 // import { SECTIONS } from '@app/components/Sections/constants'
-import { SectionObject } from '@app/types'
+// import { SectionObject } from '@app/types'
 import Intro from '@app/components/Intro'
 
 const Home = () => {
-  const [section, setSection] = useState<SectionObject | undefined>()
+  // const [section, setSection] = useState<SectionObject | undefined>()
 
   const renderBackground = () => (
     <section className="fixed -z-50 top-0 left-0 w-full h-screen">
@@ -28,7 +31,7 @@ const Home = () => {
   //   <NavBar onClick={setSection} items={SECTIONS} activeItem={section} />
   // )
 
-  const renderSection = () => <Section type={section?.name} />
+  // const renderSection = () => <Section type={section?.name} />
   return (
     <>
       {renderIntro()}
