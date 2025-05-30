@@ -2,11 +2,12 @@ import { Suspense, useState } from 'react'
 
 import Loader from '../Loader'
 import PlanetScene from '@app/components/PlanetScene'
-import NavBar from '@app/components/NavBar'
+// import NavBar from '@app/components/NavBar'
 import Section from '@app/components/Sections'
 
-import { SECTIONS } from '@app/components/Sections/constants'
+// import { SECTIONS } from '@app/components/Sections/constants'
 import { SectionObject } from '@app/types'
+import Intro from '@app/components/Intro'
 
 const Home = () => {
   const [section, setSection] = useState<SectionObject | undefined>()
@@ -19,24 +20,19 @@ const Home = () => {
     </section>
   )
 
-  const renderWelcomeMessage = () => {
-    return (
-      <div className="text-9xl text-white justify-center text-center">
-        <div>Hi</div>
-      </div>
-    )
+  const renderIntro = () => {
+    return <Intro />
   }
 
-  const renderNav = () => (
-    <NavBar onClick={setSection} items={SECTIONS} activeItem={section} />
-  )
+  // const renderNav = () => (
+  //   <NavBar onClick={setSection} items={SECTIONS} activeItem={section} />
+  // )
 
   const renderSection = () => <Section type={section?.name} />
   return (
     <>
-      {renderWelcomeMessage()}
-      {renderNav()}
-      {renderSection()}
+      {renderIntro()}
+      {/* {renderSection()} */}
       {renderBackground()}
     </>
   )
